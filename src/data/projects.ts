@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "Snake Game",
     description: "Le jeu de Snake en JavaScript est une implémentation classique du jeu vidéo rétro, où les joueurs contrôlent un serpent qui se déplace à travers un espace clos, consommant des pommes pour grandir tout en évitant de se heurter aux murs ou à son propre corps.",
     image: "/projects/Mockup-snack.avif",
-    url:"https://playsnake-canva.netlify.app/",
+    url:"https://snake-beta-one.vercel.app/",
     tasks: [ "Mécanique de jeu: Création du serpent et de la pomme, gestion des mouvements du serpent et les collisions, ainsi que la gestion du score qui permet de redémarrer le jeu après un Game Over. Les contrôles du jeu sont fluides via le clavier, offrant une expérience interactive et immersive." ],
     tags: ["JavaScript"],
   },
