@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import myProfile from "@/data/myProfile";
+import SocialLinks from "./SocialLinks.astro";
+import Skills from "./shared/Skills.astro";
+---
+
+<section
+  class="flex flex-col gap-8 md:flex-row-reverse md:justify-end md:gap-12"
+>
+
+
+  {
+    myProfile.profile && (
+      <Image
+        src={myProfile.profile}
+        class="w-1/4 md:self-center rounded-full shadow-card-shadow hover:animate-pulse ease-in duration-300 hover:ring-2  hover:scale-105 ring-violet-600"
+        alt="photo de profile du Anis Ben Youssef"
+        width={200}
+        height={100}
+      />
+    )
+  }
+ 
+  <article class="flex flex-col gap-8">
+    <h1 class="font-title text-zinc-950
+     text-4xl md:text-5xl lg:text-6xl  pb-4 md:pb-sp-32">
+      {myProfile.title}
+    </h1>
+    <div class="flex flex-col md:flex-row-reverse gap-4 md:items-center">
+      <SocialLinks />
+      <h2 class="font-title text-zinc-900/90 text-3xl md:text-4xl lg:text-5xl  md:pb-4">
+        {myProfile.job}
+      </h2>
+
+    </div>
+    <p>{myProfile.description}</p>
+    <Skills />
+  </article>
+</section>

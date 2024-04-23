@@ -1,0 +1,19 @@
+---
+import type { Skill } from "@/data/skills";
+import skills from "@/data/skills";
+---
+
+<>
+
+<ul role="list" class="flex flex-row  flex-wrap gap-x-2 gap-y-5">
+    {skills.map((skill: Skill) => (
+        <li>
+           
+            <span class=" group mt-2  bg-violet-400 hover:bg-custom-gradient hover:text-zinc-50 px-3 py-2 rounded-full shadow-sm hover:shadow-btn-shadow">{skill.name}</span>
+        </li>
+    ))}
+</ul>
+</>
+
+   
+

@@ -1,0 +1,17 @@
+ 
+    .post p{
+        @apply text-zinc-900/80
+    }
+ 
+    .post h2{
+        @apply font-content font-normal text-zinc-900/80 text-xl md:text-2xl lg:text-3xl
+    }
+    .post blockquote{
+        @apply bg-zinc-200 border-l-8 border-x-violet-600 
+    }
+    .post a{
+        @apply text-violet-600 
+    }
+    .post img{
+        @apply transition-all duration-300 hover:scale-105
+    }

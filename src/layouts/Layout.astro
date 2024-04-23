@@ -1,0 +1,26 @@
+---
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import SEOTags from "@/components/seo/SEOtags.astro";
+import type { HeadTags } from "@/utils/types/HeadTags";
+import "@/styles/tailwind.css"
+import "@/styles/post.css";
+
+
+
+export type Props = HeadTags;
+
+const headTags = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="fr">
+ <SEOTags {...headTags} />
+ <body  class="bg-zinc-50 text-zinc-900/85 font-content text-base md:text-lg">
+  <Header />
+  <main class="flex flex-col gap-16 lg:gap-24 xl:gap-32 px-sp-64 md:px-sp-96 lg:px-sp-128">
+      <slot />
+  </main>
+  <Footer />
+  </body>
+  
+</html>

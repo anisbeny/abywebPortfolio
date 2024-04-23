@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import myProfile  from "@/data/myProfile";
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout title="404 | ABY webcrea">
+    <main class="flex h-max flex-col items-center justify-center gap-8">
+        <a href="/">
+            {
+                myProfile.logo &&(
+                    <Image
+                      src={myProfile.logo}
+                      alt="Logo ABY webcrea"
+                      width={200}
+                      height={100}
+                    />
+                )
+            }
+         </a> 
+      
+        <h1 class="font-title text-zinc-950 text-4xl md:text-5xl lg:text-6xl">404</h1>
+        <p class=" text-zinc-900/85 md:text-xl">Wopsy, cette page n'existe pas &#128736</p>
+        <a
+          class="font-title  text-zinc-900/90 md:text-xl hover:text-violet-600  hover:underline"
+          href="/"
+        >
+          Retourner sur la page d'accueil
+        </a>
+        <a
+        class="font-title text-zinc-900/90 md:text-xl hover:text-violet-600 hover:underline"
+        href="/posts"
+      >
+        Voir mes publications
+      </a>
+    </main>
+  </Layout>

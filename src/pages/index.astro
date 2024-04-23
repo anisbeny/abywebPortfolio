@@ -1,0 +1,72 @@
+---
+import { getCollection } from "astro:content";
+import Intro from "@/components/Intro.astro";
+import Project from "@/components/Project.astro";
+import myProfile from "@/data/myProfile";
+import SocialLinks from "@/components/SocialLinks.astro";
+import Link from "@/components/shared/Link.astro";
+import PostCard from "@/components/PostCard.astro";
+import Layout from "../layouts/Layout.astro";
+const posts = (await getCollection("posts")).sort(function (first, second) {
+  return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+});
+---
+
+<Layout>
+  <Intro />
+  <section class="flex  flex-col gap-8 md:gap-12">
+    <header class="flex w-full flex-row justify-between gap-4">
+      <h2 class="font-title text-zinc-900/90 text-3xl md:text-4xl lg:text-5xl">
+        Dernières Inspirations et Découvertes
+      </h2>
+      <Link
+        href="/posts"
+        label="Voir tous les postes"
+        isUnderline
+        target="_self"
+      />
+    </header>
+    {posts.length === 0 && <p>Prochainement, restez connecté👀...</p>}
+
+  <div class="grid  gap-4 lg:grid-cols-2" >
+
+      {
+        posts.length !== 0 &&
+          posts
+            .slice(0, 2)
+            .map((post) => (
+              <PostCard 
+                publishedAt={post.data.publishedAt}
+                title={post.data.title}
+                description={post.data.description}
+                slug={post.slug}
+              />
+            ))
+      }
+  </div>
+  
+  </section>
+  <Project />
+  <section>
+    <header>
+      <h2
+        class="font-title text-zinc-900/90 text-3xl md:text-4xl lg:text-5xl pb-sp-32 md:pb-sp-48"
+      >
+        Restons en Contact
+      </h2>
+    </header>
+    <main class="flex flex-col gap-2">
+      <p class="leading-relaxed">
+        Je suis ouvert à de nouvelles opportunités excitantes, que ce soit pour
+        un poste en CDI, CDD ou pour des missions freelance passionnantes.
+      </p>
+      <p class="leading-relaxed">
+        Pour me contacter, n'hésitez pas à m'envoyer un courriel à <Link
+          href={`mailto:${myProfile.mail}`}
+          label={myProfile.mail}
+          isUnderline
+        /> ou à me retrouver sur les réseaux sociaux<SocialLinks />
+      </p>
+    </main>
+  </section>
+</Layout>

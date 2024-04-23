@@ -1,0 +1,18 @@
+---
+import Link from "./shared/Link.astro";
+
+import myProfile  from "@/data/myProfile";
+---
+<ul role="list" class="flex flex-row gap-2 ">
+    {
+      myProfile.socials.map((social, index) => (
+        <>
+          <li>
+            <Link href={social.link} label={social.label} />
+          </li>
+  
+          {myProfile.socials.length - 1 !== index && <li class="text-gray">/</li>}
+        </>
+      ))
+    }
+  </ul>
