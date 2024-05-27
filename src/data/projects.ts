@@ -19,7 +19,7 @@ const projects: Project[] = [
       "Charte graphique: Élaboration d'une charte graphique définissant les  éléments clés de l'identité visuelle (refaire le logo, couleurs,    typographies, etc.).",
       "Site web: Conception et développement d'un site vitrine sous WordPress et création d'un thème personnalisé en reprenant les codes de la charte graphique et intégrant des champs personnalisés pour la publication des chantiers réalisés.",
     ],
-    tags: ["wordpress", "php", "sass", "adobe illustrator", "js"],
+    tags: ["Figma", "wordpress", "php", "sass", "adobe illustrator", "js"],
   },
   {
     id: 2,
@@ -32,11 +32,11 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Portfolio",
-    description: "Portfolio créer par Astro et Tailwind.",
-    image: "/blog/trend-2024.jpeg",
-    tasks: [],
-    tags: ["Astro", "Tailwind"],
+    title: "Melody Stream",
+    description: "Application de streaming de musique permettant l'inscription, la connexion, et la lecture d'albums extraits de l'API Spotify avec affichage des nouveaux et derniers albums écoutés.",
+    image: "/projects/mockup-melody-stream.avif",
+    tasks: ["Conception de la maquette : Utilisation de Penpot pour créer une maquette détaillée de l'application, définissant l'interface utilisateur et le flux de navigation.", "Développement de l'application: Mise en place de l'environnement de développement avec Astro et TailwindCSS. Connexion à l'API pour extraire et afficher les albums, gérer l'authentification des utilisateurs et permettre la lecture des morceaux. "],
+    tags: ["Astro", "Tailwind, Typescript, Spotify API, Penpot"],
   },
 ];
 
