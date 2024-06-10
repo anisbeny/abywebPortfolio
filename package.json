@@ -3,7 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "preinstall": "chmod +x node_modules/.bin/astro || true",
+    "postinstall": "chmod +x node_modules/.bin/astro || true",
+       "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
@@ -20,5 +22,12 @@
     "astro-seo": "^0.8.3",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "prettier-plugin-astro": "^0.8.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
