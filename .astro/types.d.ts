@@ -126,6 +126,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"posts": {
+"bonnes-pratiques-de-conception-de-site-web-reactif.md": {
+	id: "bonnes-pratiques-de-conception-de-site-web-reactif.md";
+  slug: "bonnes-pratiques-de-conception-de-site-web-reactif";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 "microsft-designer.md": {
 	id: "microsft-designer.md";
   slug: "microsoft-designer";
