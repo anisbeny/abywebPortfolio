@@ -1,0 +1,42 @@
+---
+// No server-side JavaScript needed for this component's core logic
+---
+<button id="theme-toggle" aria-label="Toggle theme">
+  <!-- Initial text/icon can be simple, will be updated by script if needed -->
+  Toggle
+</button>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  // Function to apply the theme
+  function applyTheme(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      // Optional: Update button text/icon to reflect current theme
+      // themeToggle.textContent = 'Light Mode'; 
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      // Optional: Update button text/icon
+      // themeToggle.textContent = 'Dark Mode';
+    }
+  }
+
+  // Check initial theme preference
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    applyTheme(true);
+  } else {
+    applyTheme(false); // Default to light if no preference
+  }
+
+  // Event listener for the toggle button
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    applyTheme(!isDark);
+  });
+</script>

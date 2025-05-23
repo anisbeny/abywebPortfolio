@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import SEOTags from "@/components/seo/SEOtags.astro";
+import ThemeSwitcher from "@/components/ThemeSwitcher.astro"; // Import the new component
 import type { HeadTags } from "@/utils/types/HeadTags";
 import "@/styles/tailwind.css"
 import "@/styles/post.css";
@@ -15,8 +16,9 @@ const headTags = Astro.props;
 <!DOCTYPE html>
 <html lang="fr">
  <SEOTags {...headTags} />
- <body  class="bg-zinc-50 text-zinc-900/85 font-content text-base md:text-lg">
+ <body class="font-content text-base md:text-lg bg-zinc-50 text-zinc-900/85 dark:bg-slate-800 dark:text-slate-50">
   <Header />
+  <ThemeSwitcher />
   <main class="flex flex-col gap-16 lg:gap-24 xl:gap-32 px-sp-64 md:px-sp-96 lg:px-sp-128">
       <slot />
   </main>
