@@ -2,7 +2,7 @@
 
 ## Description
 
-**abywebPortfolio** est un projet de portfolio personnel développé en utilisant Astro, TypeScript, JavaScript, CSS, et Docker. Ce projet vise à présenter vos compétences, expériences et projets de manière professionnelle et attrayante.
+**abywebPortfolio** est un projet de portfolio personnel développé en utilisant Astro, TypeScript, JavaScript, CSS, et Docker. Ce projet vise à présenter mes compétences, expériences et projets de manière professionnelle et attrayante.
 
 ## Technologies Utilisées
 
